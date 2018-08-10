@@ -1,17 +1,18 @@
 package com.example.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.beans.Customer;
 
-@RestController
+@Controller
 public class RestConsumer {
 
 	@RequestMapping("/")
 	public String consume(){
-		return "REST Consumer";
+		return "welcome";
 	}
 	/*@RequestMapping(value="/quote")
 	public Quote consumeQuote(){
@@ -30,8 +31,8 @@ public class RestConsumer {
 		return message;
 	}*/
 	
-	@RequestMapping(value="/send")
-	public Customer sendMessage(){
+	@RequestMapping(value="/signUp")
+	public ModelAndView sendMessage(){
 		Customer cust = new Customer();
 		cust.setC_id(1);
 		cust.setC_name("John");
@@ -42,7 +43,8 @@ public class RestConsumer {
 		RestTemplate restTemplate = new RestTemplate();
 		Customer cust_obj = restTemplate.postForObject("http://localhost:8080/receive",cust, Customer.class);
 		
-		return cust_obj;
+		
+		return new ModelAndView("showDetails","cust_obj",cust_obj);
 	}
 	
 }

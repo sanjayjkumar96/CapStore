@@ -4,20 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Hello</title>
 </head>
 <body>
-	<h1>Search Here..</h1>
-	<form action="/welcome">
-		<label>Id</label>
-		<input type="text" name="id" value="13">
-		<input type="submit">
-	</form>
-	<br>
-	<h1>
-		id = ${message.id} </br>
-		text = ${message.text} </br>
-		sender = ${message.sender.name} </br>
-	</h1>
+<a href="/signUp">SignUp</a>
 </body>
 </html>
