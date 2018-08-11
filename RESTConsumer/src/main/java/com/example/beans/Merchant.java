@@ -6,10 +6,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Merchant{
 
-	String m_id;
-	String m_name;
-	String m_email;
-	String m_password;
+	private String m_id;
+	private String m_name;
+	private String m_email;
+	private String m_password;
 
 	
 

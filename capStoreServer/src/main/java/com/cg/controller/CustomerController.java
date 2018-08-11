@@ -1,4 +1,4 @@
-package com.cg.springbootdemo;
+package com.cg.controller;
 
 
 
@@ -29,7 +29,7 @@ public class CustomerController {
 	}
 
 	
-	@RequestMapping(value="/srvSignIn")
+	@RequestMapping(value="/srvcSignIn")
 	public Customer srvCustSignIn(Customer customer){
 		
 		return cService.login(customer);

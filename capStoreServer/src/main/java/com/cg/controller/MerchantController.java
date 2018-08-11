@@ -1,4 +1,4 @@
-package com.cg.springbootdemo;
+package com.cg.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;

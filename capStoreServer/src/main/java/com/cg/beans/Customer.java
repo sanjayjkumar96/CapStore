@@ -6,56 +6,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 public class Customer {
-	/*@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
-	private String text;
-	@OneToOne(cascade=CascadeType.ALL)
-	private Sender sender;
-	public Customer(String text, Sender sender) {
-		super();
-		this.text = text;
-		this.sender=sender;
-	}
-
-	public Customer() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public String getText() {
-		return text;
-	}
-
-	public void setText(String text) {
-		this.text = text;
-	}
-
-	public Sender getSender() {
-		return sender;
-	}
-
-	public void setSender(Sender sender) {
-		this.sender = sender;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	@Override
-	public String toString() {
-		return "Message [id=" + id + ", text=" + text + ", sender=" + sender + "]";
-	}*/
-	
+		
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int c_id;
