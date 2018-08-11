@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.beans.Customer;
-import com.cg.service.CustomerRepo;
+import com.cg.repository.CustomerRepo;
 
 @RestController
-public class HelloController {
+public class CustomerController {
 	
 	@Autowired
 	private CustomerRepo repo;
