@@ -1,10 +1,9 @@
 package com.cg.beans;
 
-import java.util.List;
-
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -13,20 +12,24 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Merchant {
 	
 	@Id
-	private String m_id;
-	private String m_name;
-	private String m_email;
-	private String m_password;
-	private float m_rating;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int m_id;
 	
-	@OneToMany
-	private List<Product> products_list;
+	private String m_name;
+	
+	private String m_email;
+	
+	private String m_password;
+	
+	
+	
+	
 
-	public String getM_id() {
+	public int getM_id() {
 		return m_id;
 	}
 
-	public void setM_id(String m_id) {
+	public void setM_id(int m_id) {
 		this.m_id = m_id;
 	}
 
@@ -54,21 +57,9 @@ public class Merchant {
 		this.m_password = m_password;
 	}
 
-	public float getM_rating() {
-		return m_rating;
-	}
+	
 
-	public void setM_rating(float m_rating) {
-		this.m_rating = m_rating;
-	}
-
-	public List<Product> getProducts_list() {
-		return products_list;
-	}
-
-	public void setProducts_list(List<Product> products_list) {
-		this.products_list = products_list;
-	}
+	
 	
 	
 	

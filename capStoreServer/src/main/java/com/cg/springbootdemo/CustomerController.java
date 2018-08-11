@@ -9,41 +9,30 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.beans.Customer;
-import com.cg.repository.CustomerRepo;
+import com.cg.service.CustomerService;
 
 @RestController
 public class CustomerController {
 	
 	@Autowired
-	private CustomerRepo repo;
+	private CustomerService cService;
 	
 	
-	@RequestMapping("/")
-	public String sayHello(){
-		
-		return "Spring Boot is cool...";
-	}
 	
-	/*@RequestMapping(value="/message")
-	public Message sendMessage(){
-		return new Message("Message from SpringBoot APP",new Sender("Hitesh"));
-	}*/
 	
-	@RequestMapping(value="/receive", method=RequestMethod.POST)
-	public Customer receiveMessage(@RequestBody Customer customer){
-		repo.save(customer);
+	
+	
+	@RequestMapping(value="/srvcSignUp", method=RequestMethod.POST)
+	public Customer srvCustSignUp(@RequestBody Customer customer){
+		cService.customerSignUp(customer);
 		return customer;
 	}
 
 	
-	
-	
-	
-	
-	@RequestMapping(value="/getmessage")
-	public Customer getMessage(int id){
+	@RequestMapping(value="/srvSignIn")
+	public Customer srvCustSignIn(Customer customer){
 		
-		return repo.getOne(id);
+		return cService.login(customer);
 	}
 }
 

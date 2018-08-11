@@ -1,25 +1,26 @@
 package com.cg.springbootdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.beans.Merchant;
-import com.cg.repository.MerchantRepo;
+import com.cg.service.MerchantService;
 
-@Controller
+@RestController
 public class MerchantController {
 
 	@Autowired
-	private MerchantRepo repo;
+	private MerchantService mService;
 	
 	
-	@RequestMapping(value="/serverMerchantSignUp",method=RequestMethod.POST)
+	
+	@RequestMapping(value="/srvMerSignUp",method=RequestMethod.POST)
 	public Merchant MerchantSignUp(@RequestBody Merchant merchant) {
-		//merchantService.merchantSignUp(merchant);
-		repo.save(merchant);
+		
+		mService.merchantSignUp(merchant);
 		return merchant;
 	}	
 	
